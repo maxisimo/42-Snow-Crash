@@ -29,8 +29,8 @@ level03@SnowCrash:/tmp$ ls -l echo
 Go back to level03 home folder then add `/tmp` to the variable env `$PATH`  
 ```
 level03@SnowCrash:/tmp$ export PATH=/tmp:$PATH
-level03@SnowCrash:/tmp$ echo $PATH
-/tmp:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+level03@SnowCrash:/tmp$ printenv | grep "PATH"
+PATH=/tmp:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
 ```  
 Now we can re-execute `level03`
 ```
