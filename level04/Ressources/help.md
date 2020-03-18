@@ -14,17 +14,16 @@ level04@SnowCrash:~$
 Nothing happened, we should take a look at the code inside  
 ```
 level04@SnowCrash:~$ cat level04.pl
-#!/usr/bin/perl
-# localhost:4747
-use CGI qw{param};
-print "Content-type: text/html\n\n";
-sub x {
-  $y = $_[0];
-  print `echo $y 2>&1`;
+#!/usr/bin/perl                        # Indicates the path of the interpreter, like for bash (#!/bin/bash)
+# localhost:4747                       # This program is executed from a web server hosted on local machine and reachable via the port 4747
+use CGI qw{param};                     # In Perl, CGI(Common Gateway Interface) is a protocol for executing scripts via web requests
+print "Content-type: text/html\n\n";   # Print the string when it's execute
+sub x {                                # Define function 'x'
+  $y = $_[0];                          # Variable 'y' take the value of the variable passed as parameter
+  print `echo $y 2>&1`;                # Print variable 'y' ('2>&1' is for error handling)
 }
-x(param("x"));
+x(param("x"));                         # Call function 'x'
 ```  
-This program is executed from a web server hosted on local machine and reachable via the port 4747  
 As we can see in the code above, it will print with `echo` the output of the command. In others terms it will print the value of the variable 'x' passed as parameter !  
 -> Send a request to the script with [curl](https://curl.haxx.se/docs/manual.html) and supply it the parameter x=`getflag`  
 ```
