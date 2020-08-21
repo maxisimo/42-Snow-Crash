@@ -1,5 +1,6 @@
 # 1st Step
   
+Traditional Unix systems keep user account information, including encrypted passwords, in a text file called `/etc/passwd` ([sources](http://www.linux-france.org/article/sys/lame/html/x829.html)).
 Look at the file /etc/passwd  
 `flag01@SnowCrash:~$ cat /etc/passwd`  
 You should see this line:  
