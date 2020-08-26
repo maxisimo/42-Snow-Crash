@@ -73,4 +73,13 @@ Consider that *JTR* is the name of the JohnTheRipper's folder that you have down
 Tape `./john` without argument will show you usage  
 For more informations `cd ~/JTR/doc` or go to [doc](https://www.openwall.com/john/doc/)
   
-*source: [Mac OSX as a Pentest Platform - 04 - John the Ripper (video)](https://youtu.be/Erfm1Erck0U)*
+*source: [Mac OSX as a Pentest Platform - 04 - John the Ripper (video)](https://youtu.be/Erfm1Erck0U)*  
+  
+## Install and use John The Ripper on Windows
+*Follow this tutorial on youtube : [John the Ripper in Windows 10 [2020] || "Crack all passwords"](https://www.youtube.com/watch?v=iL2sbAKaBOY)*  
+Then open a terminal as indicate on the tutorial and tape these commands :  
+```
+C:\Users\Maxime\Desktop\john-1.9.0-jumbo-1-win64\run>echo 42hDRfypTqqnw > passwd
+C:\Users\Maxime\Desktop\john-1.9.0-jumbo-1-win64\run>john.exe passwd
+```
+Done ;)
