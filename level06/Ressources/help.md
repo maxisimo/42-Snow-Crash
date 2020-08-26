@@ -9,8 +9,8 @@ total 12
   
 Look at the php script  
 ```
-#!/usr/bin/php                                                # Indicates the path of the interpreter, like for bash (#!/bin/bash)
-<?php                                                         # Opening php tag, this is the beginning of the script
+#!/usr/bin/php                                                            # Indicates the path of the interpreter, like for bash (#!/bin/bash)
+<?php                                                                     # Opening php tag, this is the beginning of the script
 	function y($m) {
 		$m = preg_replace("/\./", " x ", $m);                     # `/\./` matches the character '.' literally (case sensitive) => replace the first '.' by " x "
 		$m = preg_replace("/@/", " y", $m);                       # `/@/` matches the character @ literally (case sensitive) => replace the first '@' by " y"
@@ -18,14 +18,14 @@ Look at the php script
 	}
 	function x($y, $z) {
 		$a = file_get_contents($y);                               # `file_get_contents()` reads entire file and return it into a string
-		$a = preg_replace("/(\[x (.*)\])/e", "y(\"\\2\")", $a);   # `/(\[x (.*)\])/e` will interpret any strings like "[x *whatever*]" as PHP code because it use the deprecated and vunerable regex 'e' modifier then we replace it by `y(*whatever*)`
+		$a = preg_replace("/(\[x (.*)\])/e", "y(\"\\2\")", $a);   # explanations bellow*
 		$a = preg_replace("/\[/", "(", $a);                       # `/\[/` matches the character [ literally (case sensitive) => replace the first '[' by '('
 		$a = preg_replace("/\]/", ")", $a);                       # `/\]/` matches the character ] literally (case sensitive) => replace the first ']' by ')'
 		return $a;
 	}
-	$r = x($argv[1], $argv[2]);                                 # call the function x *the second line will print the result*
+	$r = x($argv[1], $argv[2]);                                       # call the function x *the second line will print the result*
 	print $r;
-?>                                                            # closing php tag, end of the script
+?>                                                                        # closing php tag, end of the script
 ```
   
 It takes two parameters and calls a function x to get the content of the first parameter, assuming it refers to a file (see file_get_contents)  
