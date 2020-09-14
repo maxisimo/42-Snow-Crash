@@ -1,5 +1,5 @@
 # 1st Step  
-List the files in level10 user home directory to find `level10` executable and `token` file :  
+List files in level10 user home directory to find `level10` executable and `token` file :  
 ```
 level10@SnowCrash:~$ ls -l
 total 16
@@ -7,7 +7,7 @@ total 16
 -rw-------  1 flag10 flag10     26 Mar  5  2016 token
 level10@SnowCrash:~$
 ```  
-If we look at the executables with strings :  
+If we look at the executable with strings :  
 ```
 level10@SnowCrash:~$ strings level10
 [...]
