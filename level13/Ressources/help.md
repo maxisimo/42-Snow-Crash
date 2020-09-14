@@ -86,14 +86,14 @@ which has no line number information.
 ```
 Let's take a look at the register `eax` where the value of our UID is stock
 ```
-(gdb) print $eax
+(gdb) p $eax
 $1 = 2013
 ```
-This is our UID ! Change it by 4242 (0x1092 in hexa value)
+This is our UID ! Change it by 4242
 ```
-(gdb) p $eax=0x1092         # print to confirm that is the good value before set it
-$2 = 4242                   # perfect
 (gdb) set $eax=4242         # set the value
+(gdb) p $eax                # print the value
+$2 = 4242                   # perfect
 (gdb) step                  # Then continue to move step by step until the token is print
 Single stepping until exit from function main,
 which has no line number information.
@@ -109,5 +109,6 @@ level13@SnowCrash:~$ su level14
 Password:
 level14@SnowCrash:~$
 ```
+*nb: you can tape 'layout next' before follow the differents steps above, if you need more details*
 
 Level13 passed !
