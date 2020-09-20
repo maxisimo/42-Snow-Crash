@@ -36,7 +36,7 @@ Starting program: /bin/getflag
 You should not reverse this
 [Inferior 1 (process 2282) exited with code 01]
 ```
-It's look like protected.. disass the main to see if we can find with what
+It looks like protected.. disass the main to see if we can find something
 ```
 (gdb) disass main
 Dump of assembler code for function main:      
