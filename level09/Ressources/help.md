@@ -3,8 +3,8 @@ List the files in level09 user home directory to find 'level09' executable and '
 ```
 level09@SnowCrash:~$ cat token
 f4kmm6p|=pnDBDu{
-level09@SnowCrash:~$ 
-```  
+level09@SnowCrash:~$
+```
 The token looks like crypted and it does'nt work as password for `flag09` user  
 Let's try to understand how 'level09' executable work  
 ```
@@ -20,7 +20,7 @@ level09@SnowCrash:~$ ./level09 c
 c
 level09@SnowCrash:~$ ./level09 abc
 ace
-```  
+```
 It seems that 'level09' executable encrypt the string passed as argument by adding to each character its own index  
 Let's try with our token :  
 ```
@@ -30,19 +30,16 @@ level09@SnowCrash:~$ su flag09
 Password:
 su: Authentication failure
 level09@SnowCrash:~$
-```  
-The token must be already crypted by 'level09', we should try to decrypt it !   
-  
-# 2nd Step
-Now we can build a simple C script that will reverse the encrypted file by subtract to each character its own index (see decrypt.c)  
-You can copy decrypt.c (first line on your local machine, not on your VM)  
 ```
-~/Snow-Crash/level09/Ressources$ scp -P 4242 decrypt.c level09@172.20.10.11:/tmp/.
-level09@SnowCrash:~$ cd /tmp
-level09@SnowCrash:/tmp$ gcc decrypt.c -o decrypt
-level09@SnowCrash:/tmp$ ./decrypt 'f4kmm6p|=pnDBDu{'
+The token must be already crypted by 'level09', we should try to decrypt it !  
+
+# 2nd Step
+Now we can build a simple script that will reverse the encrypted file by subtract to each character its own index (see decrypt.py)  
+You can copy decrypt.py (first line on your local machine, not on your VM)  
+```
+~/Snow-Crash/level09/Ressources$ scp -P 4242 decrypt.py level09@172.20.10.11:/tmp/.
+level09@SnowCrash:~$ python /tmp/decrypt.py `cat token`
 f3iji1ju5yuevaus41q1afiuq
-level09@SnowCrash:/tmp$ cd
 level09@SnowCrash:~$ su flag09
 Password:
 Don't forget to launch getflag !

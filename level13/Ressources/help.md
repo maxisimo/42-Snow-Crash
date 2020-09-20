@@ -67,7 +67,7 @@ End of assembler dump.
 ```
 We can see that the program check the UID with the command `getuid`, we have to change the return value by 4242
 ```
-(gdb) b getuid
+(gdb) break getuid
 Breakpoint 1 at 0x8048380
 ```
 Launch the program
@@ -86,13 +86,13 @@ which has no line number information.
 ```
 Let's take a look at the register `eax` where the value of our UID is stock
 ```
-(gdb) p $eax
+(gdb) print $eax
 $1 = 2013
 ```
-This is our UID ! Change it by 4242
+This is our UID ! Change it by 4242  
 ```
 (gdb) set $eax=4242         # set the value
-(gdb) p $eax                # print the value
+(gdb) print $eax            # print the value
 $2 = 4242                   # perfect
 (gdb) step                  # Then continue to move step by step until the token is print
 Single stepping until exit from function main,
@@ -109,6 +109,5 @@ level13@SnowCrash:~$ su level14
 Password:
 level14@SnowCrash:~$
 ```
-*nb: you can tape 'layout next' before follow the differents steps above, if you need more details*
 
 Level13 passed !

@@ -93,7 +93,7 @@ level14@SnowCrash:~$
 ```
 Go back to our first terminal window who is running gdb and put a breakpoint on getuid before change the value of the register `$eax` where the value of the UID is stock.
 ```
-(gdb) b getuid
+(gdb) break getuid
 Breakpoint 2 at 0xb7ee4cc0
 (gdb) run
 Starting program: /bin/getflag
@@ -110,7 +110,7 @@ Move step by step until the return, change `$eax` then keep moving step by step 
 Single stepping until exit from function getuid,
 which has no line number information.
 0x08048b02 in main ()
-(gdb) p $eax
+(gdb) print $eax
 $1 = 2014
 (gdb) set $eax=3014
 (gdb) step
