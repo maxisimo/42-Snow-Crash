@@ -30,6 +30,19 @@ It will give you the password to connect to the next level (You may not be able 
 ![alt tag](https://user-images.githubusercontent.com/34480775/100729210-c403ef00-33c8-11eb-95d5-ff44954aa1d1.JPG)  
 • To help you with some levels, you’re gonna have to use external softwares. You should learn how to use the SCP command.  
 
+
+## Architecture
+This project can be separated into three parts :
+- **level[00-09] :** This is the mandatory part.
+- **level[10-14] :** This part concerns the bonuses that allowed me to go beyond a rate of 100/100.  
+### Mandatory part and bonuses
+All the folders belonging to these two parts are made up as following :  
+![alt tag](https://user-images.githubusercontent.com/34480775/100934202-b5175c80-34ee-11eb-84d7-f71b9d6f384e.JPG)  
+- **flag**
+- **Ressources** *(Everything I needed to prove my results during the evaluation)*
+    - **help.md :** Step-by-step procedure.  
+
+
 ## Minimal setup requirements of the VM
 For this project, I used VirtualBox in order to create the VM. You will also need to download the ISO, avaible in the 42 school intranet (as the subject of this project).  
 - Name : SnowCrash
